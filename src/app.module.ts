@@ -16,6 +16,10 @@ import { SuppliersModule } from './suppliers/suppliers.module';
 import { ConfigModule } from '@nestjs/config';
 import { NestDrizzleModule } from './drizzle/drizzle.module';
 import { UsersModule } from './users/users.module';
+import { WalletModule } from './wallet/wallet.module';
+import { LoginModule } from './login/login.module';
+import { ForgotPasswordModule } from './forgot-password/forgot-password.module';
+import { ChangePasswordModule } from './change-password/change-password.module';
 import * as schema from './drizzle/schema';
 
 @Module({
@@ -39,6 +43,10 @@ import * as schema from './drizzle/schema';
     CategoriesModule,
     SuppliersModule,
     UsersModule,
+    WalletModule,
+    LoginModule,
+    ForgotPasswordModule,
+    ChangePasswordModule,
   ],
   controllers: [AppController],
   providers: [

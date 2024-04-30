@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1714182031665,
+      "tag": "0000_loose_deadpool",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1714365740390,
+      "tag": "0001_magenta_komodo",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1714366165660,
+      "tag": "0002_normal_doctor_faustus",
+      "breakpoints": true
+    }
+  ]
+}

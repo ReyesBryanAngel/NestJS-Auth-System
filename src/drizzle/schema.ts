@@ -7,12 +7,29 @@ import {
   integer,
   text,
   date,
+  boolean,
+  timestamp,
 } from 'drizzle-orm/pg-core';
 
 export const users = pgTable('users', {
   userId: serial('user_id').primaryKey(),
   firstname: varchar('firstname', { length: 64 }).notNull(),
   lastname: varchar('lastname', { length: 64 }).notNull(),
+  email: varchar('email', { length: 64 }),
+  is_verified: boolean('is_verified'),
+  mobile: varchar('mobile', { length: 64 }),
+  mobileVerified: boolean('mobile_verified'),
+  password: varchar('password', { length: 64 }).notNull(),
+  confirm_password: varchar('confirm_password', { length: 64 }).notNull(),
+  deleted: boolean('deleted'),
+});
+
+export const resetPasswordTokens = pgTable('reset_password_tokens', {
+  email: varchar('email', { length: 64 }),
+  otp: varchar('otp', { length: 6 }),
+  isUsed: boolean('is_used'),
+  createdAt: timestamp('created_at'),
+  updatedAt: timestamp('updated_at'),
 });
 
 export const categories = pgTable('categories', {

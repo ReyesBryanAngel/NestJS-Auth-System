@@ -1,23 +1,22 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { UsersController } from './users.controller';
-import { UsersService } from './users.service';
+import { ForgotPasswordController } from './forgot-password.controller';
+import { ForgotPasswordService } from './forgot-password.service';
 import { DRIZZLE_ORM } from '../core/constants/db.constants';
-import { AuthService } from '../auth/auth.service';
-import { JwtService } from '@nestjs/jwt';
+import { UsersService } from '../users/users.service';
 import { CaasService } from '../shared/caas.service';
 import { HttpModule } from '@nestjs/axios';
 
-describe('UsersController', () => {
-  let controller: UsersController;
+describe('ForgotPasswordController', () => {
+  let controller: ForgotPasswordController;
 
   beforeEach(async () => {
     let mockDb: any;
+
     const module: TestingModule = await Test.createTestingModule({
-      controllers: [UsersController],
+      controllers: [ForgotPasswordController],
       providers: [
         UsersService,
-        AuthService,
-        JwtService,
+        ForgotPasswordService,
         CaasService,
         {
           provide: DRIZZLE_ORM,
@@ -27,7 +26,7 @@ describe('UsersController', () => {
       imports: [HttpModule],
     }).compile();
 
-    controller = module.get<UsersController>(UsersController);
+    controller = module.get<ForgotPasswordController>(ForgotPasswordController);
   });
 
   it('should be defined', () => {
