@@ -20,6 +20,7 @@ import { WalletModule } from './wallet/wallet.module';
 import { LoginModule } from './login/login.module';
 import { ForgotPasswordModule } from './forgot-password/forgot-password.module';
 import { ChangePasswordModule } from './change-password/change-password.module';
+import { WhoisModule } from './whois/whois.module';
 import * as schema from './drizzle/schema';
 
 @Module({
@@ -47,6 +48,7 @@ import * as schema from './drizzle/schema';
     LoginModule,
     ForgotPasswordModule,
     ChangePasswordModule,
+    WhoisModule,
   ],
   controllers: [AppController],
   providers: [
